@@ -55,12 +55,9 @@ def run_discord_bot():
 
         for i in range(0, len(uid)):
             santa = og[i]
-            fin = ""
-            fin+=santa
-            fin+=" "
+            fin = santa
             santa = randomize(santa, santa, l)
-            fin+=santa
-            #print(fin)
+            print(fin)
             user = client.get_user(uid[i])
             message = "Rules: no wishlists, no dildos, no drugs, no alcohol, no sex toys, no telling people who you got, no asking for rerolls\n\n Gift exchange will happen on the 30th. If your secret santa isn't able to make it, their address has been specified in this message(except for moz)\n\n Your secret santa assginment is: " 
             message+=santa
@@ -98,6 +95,4 @@ def randomize(santa, name, l):
         rand = random.randint(0, len(l)-1)
         santa = l[rand]
     l.remove(santa)
-    if(santa == "Preeb"):
-        santa += "(his address is 1140 W Blaine St, Riverside, CA 92507)"
     return santa
